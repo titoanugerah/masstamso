@@ -1,0 +1,185 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@*<div class="card card-invoice">*@
+    <div class="card-header">
+        <div class="invoice-header">
+            <h2 class="invoice-title">
+                Bill
+            </h2>
+            @*<div class="invoice-logo">
+                    <img src="../assets/img/examples/logoinvoice.svg" alt="company logo">
+                </div>*@
+            <input class="form-control col-md-6" id="name" value="" />
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-5">
+                <label>Invoice No.</label>
+                <input type="text" id="invoiceNo" value="" class="form-control col-md-6" />
+            </div>
+            <div class="col-md-3">
+
+                <label>Language</label>
+                <select class="form-control" id="language">
+                    <option value="1">English</option>
+                    <option value="2">Indonesia</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label>Currency</label>
+                <select class="form-control" id="currency">
+                    <option value="1">USD</option>
+                    <option value="2">IDR</option>
+                </select>
+            </div>
+
+            <br />
+            <br />
+        </div>
+
+        <br />
+        <br />
+    </div>
+    <div class="card-body">
+        <div class="separator-solid"></div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label>From</label>
+                    <textarea class="form-control col-md-10" id="from"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>To</label>
+                    <textarea class="form-control col-md-10" id="to"></textarea>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="date" class="form-control" id="date" value="" />
+                </div>
+
+                <div class="form-group">
+                    <label>Invoice Due</label>
+                    <select class="form-control" id="invoiceDue">
+                        <option value="value">Immeditially</option>
+                        <option value="value">Future</option>
+                    </select>
+                </div>
+
+                <br />
+                <button class="btn btn-info" data-toggle="modal" data-target="#addProductModal">Add Product</button>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="invoice-detail">
+                    <div class="invoice-top">
+                        <h3 class="title"><strong>Order summary</strong></h3>
+                    </div>
+                    <div class="invoice-item">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <td><strong>Item</strong></td>
+                                        <td class="text-center"><strong>Price</strong></td>
+                                        <td class="text-center"><strong>Quantity</strong></td>
+                                        <td class="text-right"><strong>Totals</strong></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>BS-200</td>
+                                        <td class="text-center">$10.99</td>
+                                        <td class="text-center">1</td>
+                                        <td class="text-right">$10.99</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="text-center"><strong>Subtotal</strong></td>
+                                        <td class="text-right">$670.99</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="separator-solid  mb-3"></div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="row">
+            <div class="col-sm-7 col-md-5 mb-3 mb-md-0 transfer-to">
+                <h5 class="sub">Bank Transfer</h5>
+                <div class="account-transfer">
+                    <div><span>Account Name:</span><span>Syamsuddin</span></div>
+                    <div><span>Account Number:</span><span>1234567890934</span></div>
+                    <div><span>Code:</span><span>BARC0032UK</span></div>
+                </div>
+            </div>
+            <div class="col-sm-5 col-md-7 transfer-total">
+                <h5 class="sub">Total Amount</h5>
+                <div class="price">$685.99</div>
+                <span>Taxes Included</span>
+            </div>
+        </div>
+        <div class="separator-solid"></div>
+        <h6 class="text-uppercase mt-4 mb-3 fw-bold">
+            Notes
+        </h6>
+        <p class="text-muted mb-0">
+            We really appreciate your business and if there's anything else we can do, please let us know! Also, should you need us to add VAT or anything else to this order, it's super easy since this is a template, so just ask!
+        </p>
+    </div>
+
+    <div class="modal fade" id="addProductModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add product to cart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label>Product</label>
+                            <select class="form-control" id="productId">
+
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Price</label>
+                            <input type="number" class="form-control" id="price" />
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Qty</label>
+                            <input type="number" class="form-control" id="qty" />
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Total</label>
+                            <input type="number" class="form-control" id="total" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Add Product</button>
+                     <button type="button" class="btn btn-grey" data-dismiss="modal">Cancel</button> 
+                </div>
+            </div>
+        </div>
+    </div>
+@*</div>*@
+
