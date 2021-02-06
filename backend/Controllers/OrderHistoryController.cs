@@ -13,23 +13,23 @@ namespace backend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductController : ControllerBase
+    public class OrderHistoryController : ControllerBase
     {
-        private readonly ILogger<ProductController> _logger;
+        private readonly ILogger<OrderHistoryController> _logger;
         private readonly Database _Db;
 
-        public ProductController(ILogger<ProductController> logger, Database db)
+        public OrderHistoryController(ILogger<OrderHistoryController> logger, Database db)
         {
             _logger = logger;
             _Db = db;
         }
 
-        // GET: api/<ProductController>
+        // GET: api/<OrderHistoryController>
         [HttpGet]
         public async Task<object> Get()
         {
 
-            return _Db.Product.ToArray();
+            return _Db.OrderHistory.ToArray();
         }
 
 

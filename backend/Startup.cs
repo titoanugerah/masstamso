@@ -29,7 +29,7 @@ namespace backend
             services.AddControllers();
             services.AddDbContext<DataAccess.Database>(options =>
                options.UseSqlServer(Configuration.GetConnectionString("Database")));
-
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +43,9 @@ namespace backend
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors(
+              options => options.WithOrigins("localhost:44354/").AllowAnyMethod()
+            );
 
             app.UseAuthorization();
 

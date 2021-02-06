@@ -17,7 +17,7 @@ namespace backend.DataAccess
 
         public DbSet<Customer> Customer { set; get; }
         public DbSet<Country> Country { set; get; }
-        public DbSet<OrderHistory> Order { set; get; }
+        public DbSet<OrderHistory> OrderHistory { set; get; }
         public DbSet<OrderDetail> OrderDetail { set; get; }
         public DbSet<Product> Product { set; get; }
 
