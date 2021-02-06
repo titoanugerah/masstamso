@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [],
+  "ConnectionStrings": {
+    "Database": "server=denbagus.database.windows.net;database=devDB;user=denbagus;password=dev@123!"
+  }
+
+
+}
